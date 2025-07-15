@@ -113,7 +113,14 @@
 
 
             #endregion
+            #region Video03 Nullable Reference Type
+            ////Nullable reference type
+            //string Message01 = null;//Required
+            //string? Message02 = null;//Optional(Nullable)
 
+            //Console.WriteLine(Message01.Length);//NullReferenceException
+            //Console.WriteLine(Message02.Length);//NullReferenceException
+            #endregion
         }
     }
 }
