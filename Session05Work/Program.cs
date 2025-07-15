@@ -69,6 +69,33 @@
         }
 
         #endregion
+
+        #region Video07 Enum Ex:01
+        enum Season : byte
+        {
+            Winter = 10,
+            Spring = 9,
+            Summer = 11,
+            Autumn
+        }
+        enum Weekday
+        {
+            Saturday,
+            Sunday,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+        }
+        enum Gender
+        {
+            Male = 0,
+            Female = 1,
+            M = 0,
+            F = 1,
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Video01 Boxing And UnBoxing
@@ -245,7 +272,21 @@
             //typeB.Y = 20;//Invalid:internal
             //typeB.Z = 5;//Valid:public
             #endregion
-
+            #region Video07 Enum EX:01
+            //Enum:Value types
+            //Stored in STACK 
+            //used with constant values
+            //Season season = Season.Summer;
+            // Console.WriteLine(season);
+            //STACK
+            //CLR Represent enum as Integer value  in memory
+            //Gender G = (Gender)1;
+            //Gender G = (Gender) Enum.Parse(typeof(Gender), Console.ReadLine(), true);
+            //Gender G01;
+            //bool Flag = Enum.TryParse(typeof(Gender), Console.ReadLine(),true,out object O1);
+            //G01 = (Gender)O1;
+            //Console.WriteLine(G01);
+            #endregion
         }
     }
 }
