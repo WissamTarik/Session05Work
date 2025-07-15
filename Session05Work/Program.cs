@@ -96,6 +96,19 @@
             F = 1,
         }
         #endregion
+
+        #region  Video08 Enum Ex:02
+        //Read,write,execute,delete
+
+        [Flags]
+        enum Permissions
+        {
+            Read = 8,
+            Write = 4,
+            Execute = 2,
+            Delete = 1
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Video01 Boxing And UnBoxing
@@ -287,6 +300,30 @@
             //G01 = (Gender)O1;
             //Console.WriteLine(G01);
             #endregion
+
+            #region Video08 Enum Ex:02
+            Permissions P01 = Permissions.Read;
+            //P01 ^= Permissions.Delete;//toggle
+            P01 |= Permissions.Delete;
+
+            Console.WriteLine(P01);
+            //Console.WriteLine((int)P01);
+            P01 &= ~(Permissions.Delete);//Remove permission
+            //~ not of bit wise 
+            //&->check permission
+
+            Console.WriteLine(P01);
+            if ((P01 & Permissions.Delete) == Permissions.Delete)
+            {
+                Console.WriteLine("Exist");
+            }
+            else
+            {
+                Console.WriteLine("Not exist");
+            }
+            #endregion
+
+
         }
     }
 }
