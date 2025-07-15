@@ -34,6 +34,15 @@
         Execute
     }
     #endregion
+
+    #region Q4
+    enum Colors
+    {
+        Red,
+        Green,
+        Blue
+    }
+    #endregion
     #endregion
     internal class Program
     {
@@ -71,7 +80,7 @@
             //{
             //    Console.Write("Enter the season (Spring, Summer, Autumn, Winter): ");
             //    Flag = Enum.TryParse(typeof(Season), Console.ReadLine(), true,out  O1);
-              
+
             //}
 
             //while (!Flag);
@@ -103,43 +112,61 @@
             is existed inside variable
 
              */
-            Permissions P01 = Permissions.Read;
-            P01 ^= Permissions.Write;
-            Console.WriteLine("Toggle write permission");
-            Console.WriteLine(P01);
-            P01 ^= Permissions.Write;
-            Console.WriteLine(P01);
-            Console.WriteLine("============================");
-            Console.WriteLine("Add permission Delete");
-            P01 |= Permissions.Delete;
-            Console.WriteLine(P01);
-            Console.WriteLine("============================");
-            Console.WriteLine("Remove permission Delete");
-            P01 &= ~(Permissions.Delete);
-            Console.WriteLine(P01);
-            Console.WriteLine("=================================");
-            Console.WriteLine($"Available permissions: {P01}");
-            if ((P01 & Permissions.Delete) == Permissions.Delete)
-            {
-                Console.WriteLine("Permission delete exist");
-            }
-            else
-            {
-                Console.WriteLine("Permission delete isn't exist");
-            }
-            P01 |= Permissions.Delete;
-         
-            Console.WriteLine($"Available permissions: {P01}");
-            if ((P01 & Permissions.Delete) == Permissions.Delete)
-            {
-                Console.WriteLine("Permission delete exist");
-            }
-            else
-            {
-                Console.WriteLine("Permission delete isn't exist");
-            }
+            //Permissions P01 = Permissions.Read;
+            //P01 ^= Permissions.Write;
+            //Console.WriteLine("Toggle write permission");
+            //Console.WriteLine(P01);
+            //P01 ^= Permissions.Write;
+            //Console.WriteLine(P01);
+            //Console.WriteLine("============================");
+            //Console.WriteLine("Add permission Delete");
+            //P01 |= Permissions.Delete;
+            //Console.WriteLine(P01);
+            //Console.WriteLine("============================");
+            //Console.WriteLine("Remove permission Delete");
+            //P01 &= ~(Permissions.Delete);
+            //Console.WriteLine(P01);
+            //Console.WriteLine("=================================");
+            //Console.WriteLine($"Available permissions: {P01}");
+            //if ((P01 & Permissions.Delete) == Permissions.Delete)
+            //{
+            //    Console.WriteLine("Permission delete exist");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Permission delete isn't exist");
+            //}
+            //P01 |= Permissions.Delete;
+
+            //Console.WriteLine($"Available permissions: {P01}");
+            //if ((P01 & Permissions.Delete) == Permissions.Delete)
+            //{
+            //    Console.WriteLine("Permission delete exist");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Permission delete isn't exist");
+            //}
             #endregion
 
+            #region Q4
+            /*
+             5. Create an enum called "Colors" with the basic colors (Red, Green, Blue) as its members.
+            Write a C# program that takes a color name as input from the user and 
+            displays a message indicating whether the input color is a primary color or not.
+             */
+            Console.Write("Enter your color: ");
+            bool Flag = Enum.TryParse(typeof(Colors), Console.ReadLine(),true, out object O1);
+            if (Flag)
+            {
+                Console.WriteLine("Yes its Primary color:)");
+            }
+            else
+            {
+                Console.WriteLine("No it isn't primary color ):");
+            }
+            
+            #endregion
             #endregion
         }
     }
