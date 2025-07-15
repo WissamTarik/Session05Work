@@ -2,6 +2,73 @@
 {
     internal class Program
     {
+        #region Video05 Exception Handling and protective code
+        //   static void DoSomeCode()
+        //{
+        //    int X, Y, Z;
+        //     X = int.Parse(Console.ReadLine());
+        //     Y = int.Parse(Console.ReadLine());
+        //    Z = X / Y;
+        //    int[] Arr = { 1, 2, 3 };
+        //    Arr[99] = 10;
+        //}
+        static void DoSomeCode()
+        {
+            try
+            {
+                int X, Y, Z;
+                X = int.Parse(Console.ReadLine());
+                Y = int.Parse(Console.ReadLine());
+                Z = X / Y;
+                int[] Arr = { 1, 2, 3 };
+                Arr[99] = 10;
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Finally");
+                //Disconnect |Dispose unmanaged resource
+            }
+
+        }
+        static void DoSomeProtectiveCode()
+        {
+            int X, Y, Z;
+            bool Flag;
+            try
+            {
+                do
+                {
+                    Console.Write("Enter first number: ");
+                    Flag = int.TryParse(Console.ReadLine(), out X);
+                }
+                while (!Flag);
+                do
+                {
+                    Console.Write("Enter second number: ");
+                    Flag = int.TryParse(Console.ReadLine(), out Y);
+                }
+                while (!Flag || Y == 0);
+                Z = X / Y;
+                int[] Arr = { 1, 2, 3 };
+                if (99 < Arr?.Length)
+                {
+                    Arr[99] = 10;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        #endregion
         static void Main(string[] args)
         {
             #region Video01 Boxing And UnBoxing
@@ -153,7 +220,23 @@
             //int Len = Arr?.Length is not null ? Arr.Length : 0;
             //Console.WriteLine(Len);
             #endregion
+            #region Video05 Exception Handling and protective code
+            //DoSomeCode();
+            //DoSomeProtectiveCode();
+            //Console.WriteLine("Hello after exception");
 
+            //Exeception
+            //1.SystemException
+            /*
+             1.1 FormatException
+             1.2 IndexOutOfRangeException
+             1.3 NullReferenceException
+             1.4 ArithmeticException
+                 1.4.1 OverflowException
+                 1.4.2 DivideByZeroException
+             */
+            //2.ApplicationException
+            #endregion
         }
     }
 }
