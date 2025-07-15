@@ -39,6 +39,81 @@
             //Dog=(dog)Animal=>Animal is Dog
 
             #endregion
+
+            #region Video02 NullableValue Type
+            //Types of Variables
+            //Reference type
+            //Value type
+
+            //int X = 10;
+            //X = null;//INVALID
+
+            //Nullable value types=> Value types that allow nulls as a valid value
+            //Nullable <int>:Allow int Value or null as a valid value
+            //int? Age = 20;
+            //Age = null;
+
+            //Nullable<double>:Allow double value or null as Valid value
+            //double? Salary = 4000.5;
+            //Salary = null;
+
+            //int X = 5;
+
+            //Y is Nullable <int>:Allows int or null as a valid value
+            //int? Y =/*(int?)*/ X;
+            ////Implicit casting
+            ////Safe casting
+            //Console.WriteLine(Y);
+
+
+            //X is a nullable <int>:Allows null and int values as a valid values
+            //int? X = 5;
+            //X = null;
+            //Y Allow only to store int values
+            //int Y = (int)X;
+            //int Y;
+            //Explicit casting
+            //May  throw exception=> Nullable object must have a value.
+
+            //Defensive code
+            //if (X != null)
+            //{
+            //    Y = (int)X;
+            //}
+            //else
+            //{
+            //    Y = 0;
+            //}
+            //=======================
+            //if (X is not null)
+            //{
+            //    Y = (int)X;
+            //}
+            //else
+            //{
+            //    Y = 0;
+            //}
+            //=====================
+            //if (X.HasValue)
+            //{
+            //    Y = X.Value;
+            //}
+            //else
+            //{
+            //    Y = 0;
+            //}
+            //===========================
+            //Y = X.HasValue ? X.Value : 0;
+            //=============================
+            //Y = X is not null ? X.Value : 0;
+            //==================================
+            //Null coalescing operator??
+            //Y = X ?? 0;//Syntax sugar
+            //Console.WriteLine(Y);
+
+
+            #endregion
+
         }
     }
 }
