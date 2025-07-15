@@ -237,6 +237,15 @@
              */
             //2.ApplicationException
             #endregion
+
+            #region Video06 Access Modifiers
+            //Common.TypeA? typeA = new TypeA();//Invalid TypeA is Internal
+            //Common.TypeB typeB = new Common.TypeB();//Public TypeB is accessable everywhere
+            //typeB.X = 10;//Invalid:Private
+            //typeB.Y = 20;//Invalid:internal
+            //typeB.Z = 5;//Valid:public
+            #endregion
+
         }
     }
 }
