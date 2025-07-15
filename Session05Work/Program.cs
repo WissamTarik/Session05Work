@@ -121,6 +121,39 @@
             //Console.WriteLine(Message01.Length);//NullReferenceException
             //Console.WriteLine(Message02.Length);//NullReferenceException
             #endregion
+
+            #region Video04 Null Propagation Operator
+            //Null propagation operator
+            //double X = default;//0
+            //Console.WriteLine(X);
+
+            //int[] Arr = default;
+            //int[] Arr = { 1, 2, 3 };
+            //if (Arr is not null)//Best practice 
+            //{
+            //    for (int i = 0; i < Arr.Length; i++)//NullReferenceException
+            //    {
+            //        Console.WriteLine(Arr[i]);
+            //    }
+            //}
+
+            //for (int i = 0;(Arr is not null)&&  i < Arr.Length; i++)//NullReferenceException
+            //{
+            //    Console.WriteLine(Arr[i]);
+            //}
+
+
+            //for (int i = 0; i < Arr?.Length; i++)//NullReferenceException
+            //{
+            //    ///ANY Value is greater then null
+            //    Console.WriteLine(Arr[i]);
+            //}
+            //int ?Len = Arr?.Length;
+            //int Len = Arr?.Length ?? 0;
+            //int Len = Arr?.Length is not null ? Arr.Length : 0;
+            //Console.WriteLine(Len);
+            #endregion
+
         }
     }
 }
